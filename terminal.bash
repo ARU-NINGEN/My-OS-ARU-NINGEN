@@ -1,2 +1,5 @@
+# 1. ソースコードをオブジェクトファイルにコンパイル
 gcc -c main.c -o main.o
-ld --oformat binary -Ttext 0x7c00 main.o -o myos.bin
+
+# 2. ヘッダーを剥がして純粋な機械語（バイナリ）に変換
+objcopy -O binary main.o main.bin
